@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% extends 'base.html' %}
+{% block content %}
+
+{% if api %}
+    {% if api == "Error" %}
+        There was an error , Please try again
+    {% else %}
+        <div class="container p-3 mb-2 bg-info">
+            <div class="jumbotron">
+            <h1 class="display-4">{{api.0.Category.Name}}</h1>
+            <p class="lead">Current {{api.0.ReportingArea}}  Air Quality: {{api.0.AQI}}</p>
+            <p>{{category_description}}</p>
+            </div>
+        </div>
+
+    {% endif %}
+{% endif %}
+ </div>
+{% endblock %}
+</body>
+</html>
